@@ -1,97 +1,169 @@
-<section id="precios" class="py-24 bg-white px-6">
-    <div class="max-w-7xl mx-auto text-center">
-        <h2 class="text-4xl md:text-5xl font-black mb-8">Planes que crecen contigo</h2>
-        
-        <div class="flex items-center justify-center gap-4 mb-16">
-            <span class="font-bold text-gray-500">Mensual</span>
-            <button onclick="toggleBilling()" id="billing-toggle" class="w-16 h-8 bg-indigo-600 rounded-full relative transition duration-300">
-                <div id="toggle-dot" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 transition-all duration-300"></div>
-            </button>
-            <span class="font-bold text-gray-900">Anual <span class="text-green-500 text-xs text-uppercase border border-green-500 px-2 py-1 rounded-lg ml-1">Ahorra 20%</span></span>
-        </div>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gema Premium | Elite Business</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="p-10 rounded-[3rem] border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-2xl transition duration-500">
-                <h3 class="text-xl font-bold mb-4">Emprendedor</h3>
-                <div class="mb-6">
-                    <span class="text-5xl font-black price-value" data-monthly="29" data-yearly="240">$29</span>
-                    <span class="text-gray-400">/periodo</span>
-                </div>
-                <ul class="text-left space-y-4 mb-10 text-gray-600">
-                    <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> 1 Página Web</li>
-                    <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> Soporte por Email</li>
-                </ul>
-                <button class="w-full py-4 rounded-2xl border-2 border-indigo-600 text-indigo-600 font-black hover:bg-indigo-600 hover:text-white transition">Elegir Plan</button>
-            </div>
-
-            <div class="p-10 rounded-[3rem] bg-indigo-600 text-white shadow-2xl shadow-indigo-200 transform md:-translate-y-4">
-                <h3 class="text-xl font-bold mb-4">Negocio Gema</h3>
-                <div class="mb-6">
-                    <span class="text-5xl font-black price-value" data-monthly="89" data-yearly="750">$89</span>
-                    <span class="text-indigo-200">/periodo</span>
-                </div>
-                <ul class="text-left space-y-4 mb-10">
-                    <li><i class="fas fa-check-circle text-white mr-2"></i> Web + Catálogo</li>
-                    <li><i class="fas fa-check-circle text-white mr-2"></i> WhatsApp Business</li>
-                    <li><i class="fas fa-check-circle text-white mr-2"></i> SEO Local</li>
-                </ul>
-                <button class="w-full py-4 rounded-2xl bg-white text-indigo-600 font-black hover:bg-indigo-50 transition">Comenzar Ahora</button>
-            </div>
-
-            <div class="p-10 rounded-[3rem] border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-2xl transition duration-500">
-                <h3 class="text-xl font-bold mb-4">Corporativo</h3>
-                <div class="mb-6">
-                    <span class="text-5xl font-black price-value" data-monthly="199" data-yearly="1600">$199</span>
-                    <span class="text-gray-400">/periodo</span>
-                </div>
-                <ul class="text-left space-y-4 mb-10 text-gray-600">
-                    <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> Multi-páginas</li>
-                    <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> IA Chatbot Pro</li>
-                </ul>
-                <button class="w-full py-4 rounded-2xl border-2 border-indigo-600 text-indigo-600 font-black hover:bg-indigo-600 hover:text-white transition">Contactar Sales</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<script>
-    // Corrección del Filtro de Catálogo (Más robusto)
-    function filterCatalog(category, btn) {
-        const items = document.querySelectorAll('.catalog-item');
-        const buttons = document.querySelectorAll('.filter-btn');
-
-        buttons.forEach(b => b.classList.replace('bg-indigo-600', 'bg-gray-100'));
-        buttons.forEach(b => b.classList.replace('text-white', 'text-gray-600'));
-        
-        btn.classList.replace('bg-gray-100', 'bg-indigo-600');
-        btn.classList.replace('text-gray-600', 'text-white');
-
-        items.forEach(item => {
-            item.style.opacity = '0';
-            setTimeout(() => {
-                if (category === 'todos' || item.classList.contains(category)) {
-                    item.style.display = 'block';
-                    setTimeout(() => item.style.opacity = '1', 50);
-                } else {
-                    item.style.display = 'none';
-                }
-            }, 300);
-        });
-    }
-
-    // Lógica de Precios Mensual/Anual
-    let isYearly = false;
-    function toggleBilling() {
-        isYearly = !isYearly;
-        const dot = document.getElementById('toggle-dot');
-        const prices = document.querySelectorAll('.price-value');
-
-        if(isYearly) {
-            dot.style.left = '2.25rem';
-            prices.forEach(p => p.innerText = '$' + p.getAttribute('data-yearly'));
-        } else {
-            dot.style.left = '0.25rem';
-            prices.forEach(p => p.innerText = '$' + p.getAttribute('data-monthly'));
+    <style>
+        :root {
+            --color-primario: #4f46e5;
+            --fuente: 'Outfit', sans-serif;
         }
-    }
-</script>
+        body { font-family: var(--fuente); scroll-behavior: smooth; }
+        
+        /* Corrección de Imagen Parcial */
+        .hero-full {
+            min-height: 100vh;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center;
+        }
+
+        .overlay-master { background: linear-gradient(135deg, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 100%); }
+
+        .btn-premium {
+            background-color: var(--color-primario);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+        .btn-premium:hover { transform: scale(1.05); box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.4); }
+        
+        .catalog-item { transition: all 0.5s ease; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <nav class="fixed w-full z-[100] bg-white/80 backdrop-blur-lg border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-black text-indigo-600">GEMA <span class="text-slate-900">PREMIUM</span></div>
+            <div class="hidden md:flex gap-8 font-semibold text-slate-600">
+                <a href="#inicio" class="hover:text-indigo-600">Inicio</a>
+                <a href="#servicios" class="hover:text-indigo-600">Catálogo</a>
+                <a href="#precios" class="hover:text-indigo-600">Precios</a>
+            </div>
+            <a href="#contacto" class="btn-premium text-white px-6 py-2 rounded-full text-sm font-bold">Cotizar</a>
+        </div>
+    </nav>
+
+    <header id="inicio" class="hero-full relative" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?q=80&w=2070');">
+        <div class="absolute inset-0 overlay-master"></div>
+        <div class="relative z-10 max-w-7xl mx-auto px-6">
+            <div class="max-w-3xl" data-aos="fade-right">
+                <span class="text-indigo-400 font-bold tracking-widest uppercase mb-4 block">Potencia tu presencia</span>
+                <h1 class="text-5xl md:text-8xl font-black text-white mb-8 leading-tight">Diseño que <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 to-cyan-400">Vende por ti.</span></h1>
+                <p class="text-slate-300 text-xl mb-10 leading-relaxed">No solo creamos páginas, construimos activos digitales para que tu equipo de 23 personas tenga la mejor herramienta del mercado.</p>
+                <div class="flex gap-4">
+                    <a href="#servicios" class="btn-premium text-white px-10 py-4 rounded-2xl font-bold shadow-lg">Ver Soluciones</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="servicios" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-black mb-6">Nuestros Servicios</h2>
+                <div class="flex justify-center gap-4">
+                    <button onclick="filterItems('todos', this)" class="filter-btn bg-indigo-600 text-white px-6 py-2 rounded-full font-bold">Todos</button>
+                    <button onclick="filterItems('web', this)" class="filter-btn bg-white text-slate-500 px-6 py-2 rounded-full font-bold shadow-sm">Webs</button>
+                    <button onclick="filterItems('marketing', this)" class="filter-btn bg-white text-slate-500 px-6 py-2 rounded-full font-bold shadow-sm">Marketing</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="grid-servicios">
+                <div class="catalog-item web bg-white p-4 rounded-[2rem] shadow-xl shadow-slate-200/50">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" class="w-full h-48 object-cover rounded-2xl mb-6">
+                    <h3 class="text-xl font-bold px-4 mb-2">Landing Page Pro</h3>
+                    <p class="text-slate-500 px-4 pb-4">Optimización total para móviles y conversión directa.</p>
+                </div>
+                <div class="catalog-item marketing bg-white p-4 rounded-[2rem] shadow-xl shadow-slate-200/50">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" class="w-full h-48 object-cover rounded-2xl mb-6">
+                    <h3 class="text-xl font-bold px-4 mb-2">Google Maps SEO</h3>
+                    <p class="text-slate-500 px-4 pb-4">Aparece en los primeros resultados de tu localidad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="precios" class="py-24 bg-slate-900 px-6">
+        <div class="max-w-7xl mx-auto text-center">
+            <h2 class="text-white text-4xl font-black mb-12">Inversión Inteligente</h2>
+            <div class="inline-flex bg-slate-800 p-1 rounded-full mb-16">
+                <button onclick="updatePrices('mes')" id="btn-mes" class="bg-indigo-600 text-white px-8 py-2 rounded-full font-bold transition">Mensual</button>
+                <button onclick="updatePrices('año')" id="btn-año" class="text-slate-400 px-8 py-2 rounded-full font-bold transition">Anual</button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-slate-800 p-10 rounded-[3rem] text-white border border-slate-700">
+                    <h3 class="text-xl mb-4">Plan Inicial</h3>
+                    <div class="text-5xl font-black mb-6" id="price-1">$49</div>
+                    <ul class="text-slate-400 space-y-4 mb-8 text-left">
+                        <li><i class="fas fa-check text-indigo-400 mr-2"></i> Hosting Incluido</li>
+                        <li><i class="fas fa-check text-indigo-400 mr-2"></i> Soporte 24/7</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-2xl bg-indigo-600 font-bold">Comenzar</button>
+                </div>
+                <div class="bg-white p-10 rounded-[3rem] text-slate-900 transform md:-translate-y-4 shadow-2xl">
+                    <h3 class="text-xl mb-4 font-bold">Plan Elite</h3>
+                    <div class="text-5xl font-black mb-6 text-indigo-600" id="price-2">$99</div>
+                    <ul class="text-slate-500 space-y-4 mb-8 text-left">
+                        <li><i class="fas fa-check text-indigo-600 mr-2"></i> Todo el Plan Inicial</li>
+                        <li><i class="fas fa-check text-indigo-600 mr-2"></i> IA Integrada</li>
+                    </ul>
+                    <button class="w-full py-4 rounded-2xl bg-slate-900 text-white font-bold">Elegir Elite</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init();
+
+        // Lógica de Filtro Corregida
+        function filterItems(cat, btn) {
+            const items = document.querySelectorAll('.catalog-item');
+            const btns = document.querySelectorAll('.filter-btn');
+            
+            btns.forEach(b => {
+                b.classList.remove('bg-indigo-600', 'text-white');
+                b.classList.add('bg-white', 'text-slate-500');
+            });
+            btn.classList.add('bg-indigo-600', 'text-white');
+
+            items.forEach(item => {
+                item.style.display = (cat === 'todos' || item.classList.contains(cat)) ? 'block' : 'none';
+            });
+        }
+
+        // Lógica de Precios Corregida
+        function updatePrices(tipo) {
+            const p1 = document.getElementById('price-1');
+            const p2 = document.getElementById('price-2');
+            const bMes = document.getElementById('btn-mes');
+            const bAño = document.getElementById('btn-año');
+
+            if(tipo === 'año') {
+                p1.innerText = '$450';
+                p2.innerText = '$950';
+                bAño.classList.add('bg-indigo-600', 'text-white');
+                bMes.classList.remove('bg-indigo-600', 'text-white');
+                bMes.classList.add('text-slate-400');
+            } else {
+                p1.innerText = '$49';
+                p2.innerText = '$99';
+                bMes.classList.add('bg-indigo-600', 'text-white');
+                bAño.classList.remove('bg-indigo-600', 'text-white');
+                bAño.classList.add('text-slate-400');
+            }
+        }
+    </script>
+</body>
+</html>

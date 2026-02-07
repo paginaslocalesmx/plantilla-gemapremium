@@ -1,93 +1,97 @@
-<section class="py-24 bg-indigo-50 px-6">
-    <div class="max-w-7xl mx-auto text-center mb-16">
-        <h2 class="text-3xl md:text-5xl font-black mb-4">Lo que dicen nuestros clientes</h2>
-        <div class="flex justify-center gap-1 text-yellow-400 text-xl">
-            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
-        </div>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up">
-            <div class="flex items-center gap-4 mb-6">
-                <img src="https://i.pravatar.cc/150?u=1" class="w-14 h-14 rounded-full border-2 border-indigo-600" alt="Cliente">
-                <div>
-                    <h4 class="font-bold">Carlos R.</h4>
-                    <p class="text-xs text-gray-500 italic">Dueño de Barbería</p>
-                </div>
-            </div>
-            <p class="text-gray-600 leading-relaxed">"Gema transformó mi negocio. Pasé de agendar por papel a recibir 20 citas semanales por la web."</p>
-        </div>
-        <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
-            <div class="flex items-center gap-4 mb-6">
-                <img src="https://i.pravatar.cc/150?u=2" class="w-14 h-14 rounded-full border-2 border-indigo-600" alt="Cliente">
-                <div>
-                    <h4 class="font-bold">Lucía M.</h4>
-                    <p class="text-xs text-gray-500 italic">Boutique de Ropa</p>
-                </div>
-            </div>
-            <p class="text-gray-600 leading-relaxed">"La elegancia de la plantilla Gemini atrae a clientes de mayor presupuesto. ¡Increíble!"</p>
-        </div>
-        <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
-            <div class="flex items-center gap-4 mb-6">
-                <img src="https://i.pravatar.cc/150?u=3" class="w-14 h-14 rounded-full border-2 border-indigo-600" alt="Cliente">
-                <div>
-                    <h4 class="font-bold">Jorge D.</h4>
-                    <p class="text-xs text-gray-500 italic">Agente Inmobiliario</p>
-                </div>
-            </div>
-            <p class="text-gray-600 leading-relaxed">"El catálogo filtrable facilitó que mis clientes encontraran su casa ideal en segundos."</p>
-        </div>
-    </div>
-</section>
-
-<section id="servicios" class="py-24 px-6 bg-white">
-    <div class="max-w-7xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-4xl font-black mb-8">Nuestro Catálogo</h2>
-            <div class="flex flex-wrap justify-center gap-4 mb-12">
-                <button onclick="filterCatalog('todos')" class="filter-btn active bg-indigo-600 text-white px-6 py-2 rounded-full font-bold transition">Todos</button>
-                <button onclick="filterCatalog('basico')" class="filter-btn bg-gray-100 text-gray-600 px-6 py-2 rounded-full font-bold hover:bg-indigo-100 transition">Básico</button>
-                <button onclick="filterCatalog('premium')" class="filter-btn bg-gray-100 text-gray-600 px-6 py-2 rounded-full font-bold hover:bg-indigo-100 transition">Premium</button>
-            </div>
+<section id="precios" class="py-24 bg-white px-6">
+    <div class="max-w-7xl mx-auto text-center">
+        <h2 class="text-4xl md:text-5xl font-black mb-8">Planes que crecen contigo</h2>
+        
+        <div class="flex items-center justify-center gap-4 mb-16">
+            <span class="font-bold text-gray-500">Mensual</span>
+            <button onclick="toggleBilling()" id="billing-toggle" class="w-16 h-8 bg-indigo-600 rounded-full relative transition duration-300">
+                <div id="toggle-dot" class="w-6 h-6 bg-white rounded-full absolute top-1 left-1 transition-all duration-300"></div>
+            </button>
+            <span class="font-bold text-gray-900">Anual <span class="text-green-500 text-xs text-uppercase border border-green-500 px-2 py-1 rounded-lg ml-1">Ahorra 20%</span></span>
         </div>
 
-        <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="catalog-item basico bg-gray-50 rounded-3xl p-6 border border-gray-100 transition duration-500">
-                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" class="rounded-2xl mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-bold mb-2">Web Presencial</h3>
-                <span class="text-xs font-bold uppercase text-indigo-600">Categoría: Básico</span>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="p-10 rounded-[3rem] border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-2xl transition duration-500">
+                <h3 class="text-xl font-bold mb-4">Emprendedor</h3>
+                <div class="mb-6">
+                    <span class="text-5xl font-black price-value" data-monthly="29" data-yearly="240">$29</span>
+                    <span class="text-gray-400">/periodo</span>
+                </div>
+                <ul class="text-left space-y-4 mb-10 text-gray-600">
+                    <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> 1 Página Web</li>
+                    <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> Soporte por Email</li>
+                </ul>
+                <button class="w-full py-4 rounded-2xl border-2 border-indigo-600 text-indigo-600 font-black hover:bg-indigo-600 hover:text-white transition">Elegir Plan</button>
             </div>
-            <div class="catalog-item premium bg-gray-50 rounded-3xl p-6 border border-gray-100 transition duration-500">
-                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" class="rounded-2xl mb-4 w-full h-48 object-cover">
-                <h3 class="text-xl font-bold mb-2">E-Commerce Elite</h3>
-                <span class="text-xs font-bold uppercase text-indigo-600">Categoría: Premium</span>
+
+            <div class="p-10 rounded-[3rem] bg-indigo-600 text-white shadow-2xl shadow-indigo-200 transform md:-translate-y-4">
+                <h3 class="text-xl font-bold mb-4">Negocio Gema</h3>
+                <div class="mb-6">
+                    <span class="text-5xl font-black price-value" data-monthly="89" data-yearly="750">$89</span>
+                    <span class="text-indigo-200">/periodo</span>
+                </div>
+                <ul class="text-left space-y-4 mb-10">
+                    <li><i class="fas fa-check-circle text-white mr-2"></i> Web + Catálogo</li>
+                    <li><i class="fas fa-check-circle text-white mr-2"></i> WhatsApp Business</li>
+                    <li><i class="fas fa-check-circle text-white mr-2"></i> SEO Local</li>
+                </ul>
+                <button class="w-full py-4 rounded-2xl bg-white text-indigo-600 font-black hover:bg-indigo-50 transition">Comenzar Ahora</button>
+            </div>
+
+            <div class="p-10 rounded-[3rem] border border-gray-100 bg-gray-50 hover:bg-white hover:shadow-2xl transition duration-500">
+                <h3 class="text-xl font-bold mb-4">Corporativo</h3>
+                <div class="mb-6">
+                    <span class="text-5xl font-black price-value" data-monthly="199" data-yearly="1600">$199</span>
+                    <span class="text-gray-400">/periodo</span>
+                </div>
+                <ul class="text-left space-y-4 mb-10 text-gray-600">
+                    <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> Multi-páginas</li>
+                    <li><i class="fas fa-check-circle text-indigo-600 mr-2"></i> IA Chatbot Pro</li>
+                </ul>
+                <button class="w-full py-4 rounded-2xl border-2 border-indigo-600 text-indigo-600 font-black hover:bg-indigo-600 hover:text-white transition">Contactar Sales</button>
             </div>
         </div>
     </div>
 </section>
 
 <script>
-    // Lógica de Filtros para el catálogo
-    function filterCatalog(category) {
+    // Corrección del Filtro de Catálogo (Más robusto)
+    function filterCatalog(category, btn) {
         const items = document.querySelectorAll('.catalog-item');
         const buttons = document.querySelectorAll('.filter-btn');
 
-        // Actualizar botones
-        buttons.forEach(btn => {
-            btn.classList.remove('bg-indigo-600', 'text-white');
-            btn.classList.add('bg-gray-100', 'text-gray-600');
-        });
-        event.target.classList.add('bg-indigo-600', 'text-white');
+        buttons.forEach(b => b.classList.replace('bg-indigo-600', 'bg-gray-100'));
+        buttons.forEach(b => b.classList.replace('text-white', 'text-gray-600'));
+        
+        btn.classList.replace('bg-gray-100', 'bg-indigo-600');
+        btn.classList.replace('text-gray-600', 'text-white');
 
-        // Filtrar items
         items.forEach(item => {
-            if (category === 'todos' || item.classList.contains(category)) {
-                item.style.display = 'block';
-                setTimeout(() => item.style.opacity = '1', 10);
-            } else {
-                item.style.opacity = '0';
-                setTimeout(() => item.style.display = 'none', 500);
-            }
+            item.style.opacity = '0';
+            setTimeout(() => {
+                if (category === 'todos' || item.classList.contains(category)) {
+                    item.style.display = 'block';
+                    setTimeout(() => item.style.opacity = '1', 50);
+                } else {
+                    item.style.display = 'none';
+                }
+            }, 300);
         });
+    }
+
+    // Lógica de Precios Mensual/Anual
+    let isYearly = false;
+    function toggleBilling() {
+        isYearly = !isYearly;
+        const dot = document.getElementById('toggle-dot');
+        const prices = document.querySelectorAll('.price-value');
+
+        if(isYearly) {
+            dot.style.left = '2.25rem';
+            prices.forEach(p => p.innerText = '$' + p.getAttribute('data-yearly'));
+        } else {
+            dot.style.left = '0.25rem';
+            prices.forEach(p => p.innerText = '$' + p.getAttribute('data-monthly'));
+        }
     }
 </script>

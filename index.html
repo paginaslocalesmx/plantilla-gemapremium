@@ -1,134 +1,93 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gema Premium | Plantilla Maestra v2.1</title>
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;900&display=swap" rel="stylesheet">
-
-    <style>
-        :root {
-            --color-primario: #4f46e5; /* Cambia este código para cambiar toda la web */
-            --color-secundario: #1e1b4b;
-            --fuente-principal: 'Outfit', sans-serif;
-        }
-
-        body { font-family: var(--fuente-principal); scroll-behavior: smooth; }
-        
-        /* Corrección de Imagen Parcial */
-        .hero-full {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed; /* Efecto Parallax suave */
-        }
-
-        .overlay-dark { background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.8)); }
-        
-        .btn-gema {
-            background-color: var(--color-primario);
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 15px -3px rgba(79, 70, 229, 0.4);
-        }
-        .btn-gema:hover { transform: translateY(-3px); box-shadow: 0 20px 25px -5px rgba(79, 70, 229, 0.5); }
-        
-        /* Estilo para el Ebook: Resaltado de cambios */
-        .guia-resaltado { border-left: 5px solid var(--color-primario); padding-left: 1rem; margin: 1rem 0; }
-    </style>
-</head>
-<body class="bg-gray-50 text-slate-900 overflow-x-hidden">
-
-    <a href="https://wa.me/TUNUMERO" class="fixed bottom-6 right-6 z-[100] btn-gema text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl animate-bounce">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md px-6 py-4 border-b border-gray-100">
-        <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <div class="text-2xl font-black text-indigo-600 tracking-tighter">GEMA <span class="text-slate-900">PREMIUM</span></div>
-            <div class="hidden md:flex space-x-8 font-medium text-gray-600">
-                <a href="#inicio" class="hover:text-indigo-600 transition">Inicio</a>
-                <a href="#servicios" class="hover:text-indigo-600 transition">Servicios</a>
-                <a href="#contacto" class="hover:text-indigo-600 transition">Contacto</a>
-            </div>
-            <a href="tel:5551234567" class="hidden md:block font-bold text-indigo-600"><i class="fas fa-phone mr-2"></i>555-123-4567</a>
+<section class="py-24 bg-indigo-50 px-6">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-black mb-4">Lo que dicen nuestros clientes</h2>
+        <div class="flex justify-center gap-1 text-yellow-400 text-xl">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
         </div>
-    </nav>
+    </div>
 
-    <header id="inicio" class="hero-full relative" style="background-image: url('https://images.unsplash.com/photo-1556761175-b413da4baf72?q=80&w=1974&auto=format&fit=crop');">
-        <div class="absolute inset-0 overlay-dark"></div>
-        
-        <div class="relative z-10 text-center px-4 max-w-5xl" data-aos="zoom-out">
-            <span class="bg-white/20 backdrop-blur-md text-white px-4 py-2 rounded-full text-sm font-bold mb-6 inline-block uppercase tracking-widest">Digitaliza tu éxito hoy</span>
-            <h1 class="text-5xl md:text-8xl font-black text-white mb-6 leading-tight">Tu Negocio en <span class="text-indigo-400">Todo el Mundo.</span></h1>
-            <p class="text-gray-200 text-xl md:text-2xl mb-10 max-w-2xl mx-auto font-light leading-relaxed">Creamos experiencias digitales que convierten visitantes en clientes leales. Diseñado para pequeños negocios con grandes ambiciones.</p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="#contacto" class="btn-gema text-white px-12 py-5 rounded-2xl text-lg font-bold">Comenzar Ahora</a>
-                <a href="#servicios" class="bg-white/10 backdrop-blur-md text-white border border-white/30 px-12 py-5 rounded-2xl text-lg font-bold hover:bg-white hover:text-indigo-900 transition">Ver Catálogo</a>
-            </div>
-        </div>
-    </header>
-
-    <section id="servicios" class="py-24 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
-                <div class="max-w-xl">
-                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4">Soluciones a tu medida</h2>
-                    <p class="text-gray-500 text-lg">No importa el tamaño de tu tienda, tenemos el plan perfecto para dignificar tu marca.</p>
-                </div>
-                <div class="text-indigo-600 font-bold border-b-2 border-indigo-600 pb-2 cursor-pointer hover:text-indigo-800 transition">Explorar todo</div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="group p-8 rounded-3xl bg-gray-50 border border-gray-100 hover:bg-white hover:shadow-2xl hover:shadow-indigo-100 transition-all duration-300" data-aos="fade-up">
-                    <div class="w-16 h-16 bg-indigo-100 rounded-2xl flex items-center justify-center text-indigo-600 text-2xl mb-6 group-hover:bg-indigo-600 group-hover:text-white transition">
-                        <i class="fas fa-rocket"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Plan Despegue</h3>
-                    <p class="text-gray-500 mb-6">Página de aterrizaje optimizada para ventas rápidas y visibilidad en Google Maps.</p>
-                    <ul class="text-sm text-gray-600 space-y-2 mb-8">
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Diseño Responsivo</li>
-                        <li><i class="fas fa-check text-green-500 mr-2"></i> Botón WhatsApp</li>
-                    </ul>
-                    <a href="#" class="font-bold text-indigo-600 group-hover:underline">Saber más →</a>
-                </div>
-
-                </div>
-        </div>
-    </section>
-
-    <section id="contacto" class="py-24 px-6 bg-slate-900">
-        <div class="max-w-4xl mx-auto bg-white rounded-[3rem] overflow-hidden shadow-2xl flex flex-col md:flex-row" data-aos="flip-left">
-            <div class="bg-indigo-600 p-12 text-white md:w-2/5">
-                <h3 class="text-3xl font-bold mb-6">Hablemos</h3>
-                <p class="text-indigo-100 mb-8 font-light">Estamos a un mensaje de transformar tu negocio.</p>
-                <div class="space-y-4 text-sm">
-                    <p><i class="fas fa-envelope mr-3"></i> hola@tunegocio.com</p>
-                    <p><i class="fas fa-phone mr-3"></i> +52 55 1234 5678</p>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+        <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up">
+            <div class="flex items-center gap-4 mb-6">
+                <img src="https://i.pravatar.cc/150?u=1" class="w-14 h-14 rounded-full border-2 border-indigo-600" alt="Cliente">
+                <div>
+                    <h4 class="font-bold">Carlos R.</h4>
+                    <p class="text-xs text-gray-500 italic">Dueño de Barbería</p>
                 </div>
             </div>
-            <form action="https://formspree.io/f/TU_ID_AQUÍ" method="POST" class="p-12 md:w-3/5">
-                <input type="text" name="nombre" placeholder="Tu Nombre" class="w-full mb-4 p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-indigo-600 transition" required>
-                <input type="email" name="email" placeholder="Tu Correo" class="w-full mb-4 p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-indigo-600 transition" required>
-                <textarea name="mensaje" placeholder="¿En qué te ayudamos?" rows="4" class="w-full mb-6 p-4 bg-gray-50 rounded-xl outline-none focus:ring-2 focus:ring-indigo-600 transition"></textarea>
-                <button type="submit" class="w-full btn-gema text-white py-4 rounded-xl font-bold">Enviar Mensaje</button>
-            </form>
+            <p class="text-gray-600 leading-relaxed">"Gema transformó mi negocio. Pasé de agendar por papel a recibir 20 citas semanales por la web."</p>
         </div>
-    </section>
+        <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="100">
+            <div class="flex items-center gap-4 mb-6">
+                <img src="https://i.pravatar.cc/150?u=2" class="w-14 h-14 rounded-full border-2 border-indigo-600" alt="Cliente">
+                <div>
+                    <h4 class="font-bold">Lucía M.</h4>
+                    <p class="text-xs text-gray-500 italic">Boutique de Ropa</p>
+                </div>
+            </div>
+            <p class="text-gray-600 leading-relaxed">"La elegancia de la plantilla Gemini atrae a clientes de mayor presupuesto. ¡Increíble!"</p>
+        </div>
+        <div class="bg-white p-8 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-300" data-aos="fade-up" data-aos-delay="200">
+            <div class="flex items-center gap-4 mb-6">
+                <img src="https://i.pravatar.cc/150?u=3" class="w-14 h-14 rounded-full border-2 border-indigo-600" alt="Cliente">
+                <div>
+                    <h4 class="font-bold">Jorge D.</h4>
+                    <p class="text-xs text-gray-500 italic">Agente Inmobiliario</p>
+                </div>
+            </div>
+            <p class="text-gray-600 leading-relaxed">"El catálogo filtrable facilitó que mis clientes encontraran su casa ideal en segundos."</p>
+        </div>
+    </div>
+</section>
 
-    <footer class="py-12 text-center text-gray-400 text-sm">
-        <p>© 2026 Gema Premium. El poder de la IA al servicio de tu comunidad.</p>
-    </footer>
+<section id="servicios" class="py-24 px-6 bg-white">
+    <div class="max-w-7xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-4xl font-black mb-8">Nuestro Catálogo</h2>
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="filterCatalog('todos')" class="filter-btn active bg-indigo-600 text-white px-6 py-2 rounded-full font-bold transition">Todos</button>
+                <button onclick="filterCatalog('basico')" class="filter-btn bg-gray-100 text-gray-600 px-6 py-2 rounded-full font-bold hover:bg-indigo-100 transition">Básico</button>
+                <button onclick="filterCatalog('premium')" class="filter-btn bg-gray-100 text-gray-600 px-6 py-2 rounded-full font-bold hover:bg-indigo-100 transition">Premium</button>
+            </div>
+        </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-    </script>
-</body>
-</html>
+        <div id="catalog-grid" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="catalog-item basico bg-gray-50 rounded-3xl p-6 border border-gray-100 transition duration-500">
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500" class="rounded-2xl mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-bold mb-2">Web Presencial</h3>
+                <span class="text-xs font-bold uppercase text-indigo-600">Categoría: Básico</span>
+            </div>
+            <div class="catalog-item premium bg-gray-50 rounded-3xl p-6 border border-gray-100 transition duration-500">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=500" class="rounded-2xl mb-4 w-full h-48 object-cover">
+                <h3 class="text-xl font-bold mb-2">E-Commerce Elite</h3>
+                <span class="text-xs font-bold uppercase text-indigo-600">Categoría: Premium</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    // Lógica de Filtros para el catálogo
+    function filterCatalog(category) {
+        const items = document.querySelectorAll('.catalog-item');
+        const buttons = document.querySelectorAll('.filter-btn');
+
+        // Actualizar botones
+        buttons.forEach(btn => {
+            btn.classList.remove('bg-indigo-600', 'text-white');
+            btn.classList.add('bg-gray-100', 'text-gray-600');
+        });
+        event.target.classList.add('bg-indigo-600', 'text-white');
+
+        // Filtrar items
+        items.forEach(item => {
+            if (category === 'todos' || item.classList.contains(category)) {
+                item.style.display = 'block';
+                setTimeout(() => item.style.opacity = '1', 10);
+            } else {
+                item.style.opacity = '0';
+                setTimeout(() => item.style.display = 'none', 500);
+            }
+        });
+    }
+</script>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre del Negocio | Tu Presencia Digital</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Poppins', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); }
+        .parallax { background-attachment: fixed; background-position: center; background-repeat: no-repeat; background-size: cover; }
+        .btn-3d { transition: all 0.2s ease; border-bottom: 4px solid #b45309; }
+        .btn-3d:active { transform: translateY(2px); border-bottom-width: 2px; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800">
+
+    <nav class="fixed w-full z-50 glass px-6 py-4 flex justify-between items-center">
+        <div class="text-2xl font-bold text-indigo-600">LOGO/BRAND</div>
+        <div class="hidden md:flex space-x-8 font-medium">
+            <a href="#inicio" class="hover:text-indigo-600 transition">Inicio</a>
+            <a href="#servicios" class="hover:text-indigo-600 transition">Servicios</a>
+            <a href="#calculadora" class="hover:text-indigo-600 transition">Calculadora</a>
+            <a href="#contacto" class="hover:text-indigo-600 transition">Contacto</a>
+        </div>
+        <a href="https://wa.me/tu-numero" class="bg-green-500 text-white px-6 py-2 rounded-full font-bold shadow-lg hover:bg-green-600 transition animate__animated animate__pulse animate__infinite">WhatsApp</a>
+    </nav>
+
+    <header id="inicio" class="h-screen flex items-center justify-center parallax" style="background-image: url('https://images.unsplash.com/photo-1513530534585-c7b1394c6d51?q=80&w=2071&auto=format&fit=crop');">
+        <div class="bg-black/50 absolute inset-0"></div>
+        <div class="relative text-center text-white px-4 animate__animated animate__fadeInUp">
+            <h1 class="text-5xl md:text-7xl font-bold mb-4">Eleva tu Estilo</h1>
+            <p class="text-xl md:text-2xl mb-8 font-light">Servicios premium para clientes exigentes.</p>
+            <a href="#servicios" class="bg-indigo-600 btn-3d px-10 py-4 rounded-xl text-lg font-bold">Ver Catálogo</a>
+        </div>
+    </header>
+
+    <section id="servicios" class="py-20 px-6 max-w-7xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-16">Nuestros Destacados</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+            <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?w=500&auto=format" alt="Servicio 1" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-2">Corte Clásico</h3>
+                    <p class="text-slate-600 mb-4">La mejor técnica tradicional con un acabado moderno.</p>
+                    <span class="text-indigo-600 font-bold text-xl">$25.00</span>
+                </div>
+            </div>
+            <div class="bg-white border-4 border-indigo-600 rounded-3xl overflow-hidden shadow-2xl relative transform scale-105">
+                <div class="bg-indigo-600 text-white text-xs font-bold px-4 py-1 absolute top-4 right-4 rounded-full uppercase italic">Top Ventas</div>
+                <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=500&auto=format" alt="Servicio 2" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-2">Barba VIP</h3>
+                    <p class="text-slate-600 mb-4">Ritual completo de toalla caliente y aceites esenciales.</p>
+                    <span class="text-indigo-600 font-bold text-xl">$35.00</span>
+                </div>
+            </div>
+            <div class="bg-white rounded-3xl overflow-hidden shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2">
+                <img src="https://images.unsplash.com/photo-1599351431247-f570321c29e7?w=500&auto=format" alt="Servicio 3" class="w-full h-64 object-cover">
+                <div class="p-8">
+                    <h3 class="text-2xl font-bold mb-2">Combo Total</h3>
+                    <p class="text-slate-600 mb-4">Corte, barba y exfoliación facial.</p>
+                    <span class="text-indigo-600 font-bold text-xl">$50.00</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="calculadora" class="bg-slate-900 py-20 px-6 text-white">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-10">Calcula tu Ahorro con Membresía</h2>
+            <div class="glass p-10 rounded-3xl text-slate-800 space-y-6">
+                <p class="text-white mb-4">¿Cuántas veces nos visitas al mes?</p>
+                <input type="number" id="visitas" placeholder="Ej. 2" class="w-full p-4 rounded-xl text-center text-2xl font-bold focus:ring-4 focus:ring-indigo-500 outline-none">
+                <button onclick="calcular()" class="w-full bg-indigo-500 text-white py-4 rounded-xl font-bold text-xl hover:bg-indigo-400 transition">Calcular Ahorro</button>
+                <div id="resultado" class="text-2xl font-bold text-indigo-400 mt-4 h-8"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white py-12 px-6 text-center border-t border-slate-200">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-10 text-left">
+            <div>
+                <h4 class="font-bold text-lg mb-4">Sobre Nosotros</h4>
+                <p class="text-slate-500">Dedicados a la excelencia desde 2010. Tu confianza es nuestra prioridad.</p>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Legal</h4>
+                <ul class="text-slate-500 space-y-2">
+                    <li><a href="#" class="hover:text-indigo-600">Aviso de Privacidad</a></li>
+                    <li><a href="#" class="hover:text-indigo-600">Términos y Condiciones</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold text-lg mb-4">Síguenos</h4>
+                <div class="flex space-x-4">
+                    <span class="p-2 bg-slate-100 rounded-full cursor-pointer hover:bg-indigo-100">FB</span>
+                    <span class="p-2 bg-slate-100 rounded-full cursor-pointer hover:bg-indigo-100">IG</span>
+                    <span class="p-2 bg-slate-100 rounded-full cursor-pointer hover:bg-indigo-100">X</span>
+                </div>
+            </div>
+        </div>
+        <p class="mt-12 text-slate-400 text-sm">© 2026 Creado por Tu Agencia de Éxito. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+        function calcular() {
+            const visitas = document.getElementById('visitas').value;
+            const ahorro = visitas * 5; // Ahorro hipotético de $5 por visita
+            const res = document.getElementById('resultado');
+            if(visitas > 0) {
+                res.innerText = `¡Ahorrarías $${ahorro} al mes con nosotros!`;
+            } else {
+                res.innerText = "Ingresa un número válido";
+            }
+        }
+    </script>
+</body>
+</html>
